@@ -1,0 +1,36 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.4.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-data-rest')
+    compile 'com.spotify:docker-client:8.13.0'
+
+    compile group: 'org.glassfish.jersey.bundles.repackaged', name: 'jersey-guava', version: '2.6'
+    compile group: 'org.glassfish.jersey.inject', name: 'jersey-hk2', version: '2.27'
+    compile group: 'org.glassfish.hk2', name: 'hk2-api', version: '2.5.0-b62'
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

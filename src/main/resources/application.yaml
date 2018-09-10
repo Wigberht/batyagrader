@@ -1,0 +1,6 @@
+docker:
+  container:
+    java: "java:8"
+code:
+  java:
+    dir: <DIRECTORY FOR GENERATED JAVA CLASSES>
